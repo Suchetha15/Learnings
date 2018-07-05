@@ -1,72 +1,87 @@
 console.log('Hi');
 
-/*var template = (
+/*const template = (
+<div>
   <h1>Indecision App</h1>
   <p>Sub title</p>
   <ol>
     <li>Option1</li>
     <li>Option2</li>
   </ol>
+</div>
 );
-
-var template2 = ( 
+const template2 = ( 
+<div>
   <h1>Suchetha</h1>
   <p>Age: 24</p>
   <p>location: Bengalury</p>
+</div>
 );*/
 
-var content1 = {
+const content1 = {
   heading: "Indecision App",
   subtitle: "Sub title",
-  options: ["one", "two"]
+  options: ["sadf"]
 };
 
-var user = {
+const user = {
  name: "Suchetha",
- age: 24,
- location: "Bengaluru"
+ age: 19,
+ //location: "Bengaluru"
 };
-/*var template = (
+/*
+const template = (
+<div>
   <h1>{content1.heading}</h1>
   <p>{content1.subtitle}</p>
   <ol>
     <li>Option1</li>
     <li>Option2</li>
   </ol>
+  </div>
 );
-
-var template2 = ( 
+const template2 = ( 
+    <div>
   <h1>{user.name}</h1>
   <p>Age: {user.age}</p>
   <p>location: {user.location}</p>
+  </div>
 );*/
 
 
-//////
+
 function setLocation(location){
-//return <p>Location: {location || "Anonymous"}</p>
-  if(location){
+return <p>Location: {location || "Anonymous"}</p>
+  /*if(location){
    return <p>Location: {location}</p>
-  }
+  }*/
 }
-var template2 = ( 
-  <h1>{user.name}</h1>
-  //{(user.age >=18) ? <p>Age: {user.age}</p>}
-  //{(user.age >=18) && <p>Age: {user.age}</p>}
-  {(user.age && user.age >=18) && <p>Age: {user.age}</p>}
-  {setLocation(user.location)}
-);*/
+const template2 = ( 
+  <div>
+    <h1>{user.name}</h1>
+    {(user.age && user.age >=18) ? <p>Age: {user.age}</p>: null}
+    {setLocation(user.location)}
+  </div>
+);
 
-var template = {
-  <h1>{content1.heading}</h1>
-  {content1.subtitle && <p>{content1.Subtitle}</p>}
-  <p>{options.length = 0 ? "No options to display" : "Here are your options"
-  <ol>
-    <li>Option1</li>
-    <li>Option2</li>
-  </ol>
-   }</p>
-};
+const template = (
+    <div>
+        <h1>{content1.heading}</h1>
+        {content1.subtitle && <p>{content1.subtitle}</p>}
+        
+        <p>{content1.options.length == 0 ? "No options to display" : 
+        <p>Here are your options:
+        <ol>
+            <li>Option1</li>
+            <li>Option2</li>
+        </ol>
+        </p>
+        }
+        </p>
+    </div>
+);
 
-var approot = document.getElementById("demo");
+const approot = document.getElementById("test");
+const approot1 = document.getElementById("test1");
 ReactDOM.render(template, approot);
+ReactDOM.render(template2, approot1);
