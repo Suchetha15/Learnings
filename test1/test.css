@@ -1,0 +1,19 @@
+console.log('Hi');
+
+/*var template = (
+  <h1>Indecision App</h1>
+  <p>Sub title</p>
+  <ol>
+    <li>Option1</li>
+    <li>Option2</li>
+  </ol>
+);
+
+var template2 = ( 
+  <h1>Suchetha</h1>
+  <p>Age: 24</p>
+  <p>location: Bengalury</p>
+);*/
+
+var approot = document.getElementById("demo");
+ReactDOM.render(template, approot);
