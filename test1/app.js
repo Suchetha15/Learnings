@@ -25,6 +25,37 @@ var user = {
  age: 24,
  location: "Bengaluru"
 };
+/*var template = (
+  <h1>{content1.heading}</h1>
+  <p>{content1.subtitle}</p>
+  <ol>
+    <li>Option1</li>
+    <li>Option2</li>
+  </ol>
+);
+
+var template2 = ( 
+  <h1>{user.name}</h1>
+  <p>Age: {user.age}</p>
+  <p>location: {user.location}</p>
+);*/
+
+/*var template = (
+  <h1>content1.heading</h1>
+  {content1.subtitle ? content1.subtitle : "Anonymous"}
+  <ol>
+    <li>Option1</li>
+    <li>Option2</li>
+  </ol>
+);
+
+var template2 = ( 
+  <h1>user.name</h1>
+  <p>Age: user.age</p>
+  <p>location: user.location</p>
+);*/
+
+
 
 
 var approot = document.getElementById("demo");
