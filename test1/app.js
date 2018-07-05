@@ -17,7 +17,8 @@ var template2 = (
 
 var content1 = {
   heading: "Indecision App",
-  subtitle: "Sub title"
+  subtitle: "Sub title",
+  options: ["one", "two"]
 };
 
 var user = {
@@ -40,23 +41,32 @@ var template2 = (
   <p>location: {user.location}</p>
 );*/
 
-/*var template = (
-  <h1>content1.heading</h1>
-  {content1.subtitle ? content1.subtitle : "Anonymous"}
+
+//////
+function setLocation(location){
+//return <p>Location: {location || "Anonymous"}</p>
+  if(location){
+   return <p>Location: {location}</p>
+  }
+}
+var template2 = ( 
+  <h1>{user.name}</h1>
+  //{(user.age >=18) ? <p>Age: {user.age}</p>}
+  //{(user.age >=18) && <p>Age: {user.age}</p>}
+  {(user.age && user.age >=18) && <p>Age: {user.age}</p>}
+  {setLocation(user.location)}
+);*/
+
+var template = {
+  <h1>{content1.heading}</h1>
+  {content1.subtitle && <p>{content1.Subtitle}</p>}
+  <p>{options.length = 0 ? "No options to display" : "Here are your options"
   <ol>
     <li>Option1</li>
     <li>Option2</li>
   </ol>
-);
-
-var template2 = ( 
-  <h1>user.name</h1>
-  <p>Age: user.age</p>
-  <p>location: user.location</p>
-);*/
-
-
-
+   }</p>
+};
 
 var approot = document.getElementById("demo");
 ReactDOM.render(template, approot);
