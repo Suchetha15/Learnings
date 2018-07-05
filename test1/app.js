@@ -14,10 +14,16 @@ var template2 = (
   <p>Age: 24</p>
   <p>location: Bengalury</p>
 );*/
+
+var content1 = {
+  heading: "Indecision App",
+  subtitle: "Sub title"
+};
+
 var user = {
- name = "Suchetha",
- age = 24,
- location = "Bengaluru"
+ name: "Suchetha",
+ age: 24,
+ location: "Bengaluru"
 };
 
 
