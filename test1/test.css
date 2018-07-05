@@ -14,6 +14,12 @@ var template2 = (
   <p>Age: 24</p>
   <p>location: Bengalury</p>
 );*/
+var user = {
+ name = "Suchetha",
+ age = 24,
+ location = "Bengaluru"
+};
+
 
 var approot = document.getElementById("demo");
 ReactDOM.render(template, approot);
