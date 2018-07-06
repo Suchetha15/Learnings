@@ -105,5 +105,9 @@ console.log(multiplier.multiplyNum());
 		return <li key={op}>{op}</li>;
 	});
        }
-        </ol>
+        /*</ol>
+	{
+	content1.options.map((op) => <li key={op}>{op}</li>)
+       }
+        </ol>*/
 */
