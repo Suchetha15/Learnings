@@ -98,3 +98,12 @@ const multiplier = {
 	}	
 };
 console.log(multiplier.multiplyNum());
+
+/*<ol>
+        {
+	content1.options.map((op) => {
+		return <li key={op}>{op}</li>;
+	});
+       }
+        </ol>
+*/
