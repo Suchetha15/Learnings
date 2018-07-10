@@ -26,19 +26,31 @@ class Header extends React.Component{
 }
 
 class Action extends React.Component{
+handlePick(){
+	alert('Pick Me');
+}
   render(){
     return (
       <div>
-        <button>Click Me</button>
+        <button onClick={this.handlePick}>Click Me</button>
       </div>
     );
   }
 }
-
+//props is an object
 class Options extends React.Component{
+constructor(props){
+super(props);
+this.handleRemoveAll = this.handleRemoveAll.bind(this);
+}
+  handleRemoveAll() {
+     console.log(this.props.options);
+    // alert('Remove All items');
+  }
   render(){
     return (
      <div>
+        <button onClick={this.handleRemoveAll}>Remove All</button>
        {this.props.options.map((option) => <Option key={option} optionText={option}/>)}
      </div>
            
@@ -61,17 +73,93 @@ class Option extends React.Component{
 }
 
 class AddOptions extends React.Component{
+  handleAddOption(e){
+    e.preventDefault();
+    const option = e.target.elements.option.value.trim();
+    if(option) {
+    	alert('Add Option');
+    }
+  }
   render(){
     return (
       <div>
-        <button>Add Options</button>
-      </div>
+          <form onSubmit={this.handleAddOption}>
+	<input type="text" name="option">
+	//<submit type="submit">Submit</submit>
+	<button>Add Option</button>      
+        </form>   
+   </div>
     );
   }
 }
+ReactDOM.render(<IndecisonApp />, document.getElementById("test"));
 
-
-
-
+////counter example re-written using component state
+class Counter extends React.Component{
+  constructor(props){
+	super(props);
+	this.plusOne = this.plusOne.bind(this);
+	this.minusOne = this.minusOne.bind(this);
+	this.refresh = this.refresh.bind(this);
+	this.state = {
+		count: 0
+	`};
+  }
+  plusOne() {
+	this.setState((previousState) => {
+		return {
+			count: previousState.count + 1;
+		};	
+	});
+  	//console.log('plusOne');
+  }
+  minusOne() {
+	this.setState((previousState) => {
+		return {
+			count: previousState.count - 1;
+		};	
+	});
+  	//console.log('minusOne');
+  }
+  refresh() {
+	this.setState(() => {
+		return {
+			count: 0;
+		};	
+	});
+  	//console.log('refresh');
+  }
+  render(){
+     <div>
+	<h1>Count: {this.state.count}</h1>
+	<button onClick = {this.plusOne}>+1</button> 
+	<button onClick = {this.minusOne}>-1</button> 
+	<button onClick = {this.refresh}>refresh</button> 
+    </div>
+  }
+}
 
 ReactDOM.render(<IndecisonApp />, document.getElementById("test"));
+
+///visibility toggle
+class VisibilityToggle extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			visibility: false,
+			visibleText: 'Some Text'
+		};
+	}
+	handleClick(){
+		this.setState((previousState) => {
+			visibility: !previousState.visibility;
+		});
+	}
+	render(){
+   	  <div>
+		<h1>Visibility Toggle</h1>
+		<button onClick = {this.handleClick}>{this.state.visibility}</button> 
+		<p>{this.state.visibleText}</p>
+   	 </div>
+  	}
+}
