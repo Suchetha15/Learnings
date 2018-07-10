@@ -103,7 +103,7 @@ class Counter extends React.Component{
 	this.refresh = this.refresh.bind(this);
 	this.state = {
 		count: 0
-	`};
+	};
   }
   plusOne() {
 	this.setState((previousState) => {
