@@ -58,6 +58,7 @@ handleAddOption(option){
  }
 }
 
+
 class Header extends React.Component{
  render(){
   return (
@@ -68,6 +69,17 @@ class Header extends React.Component{
   );
  }
 }
+
+/*
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
+    </div>
+  );	
+};*/
+
 
 class Action extends React.Component{
   render(){
@@ -83,6 +95,18 @@ class Action extends React.Component{
   }
 }
 
+/*
+const Action = (props) => {
+  return (
+      <div>
+        <button 
+          onClick={props.handleClick}
+          disabled={!props.hasOption}
+        >Click Me</button>
+      </div>
+    );
+}*/
+
 
 //props is an object
 class Options extends React.Component{
@@ -97,6 +121,17 @@ class Options extends React.Component{
  }
 }
 
+/*
+const Options = (props) => {
+  return (
+    <div>
+      <button onClick={props.handleDeleteAll}>Remove All</button>
+      {props.options.map((option) => <Option key={option} optionText={option}/>)}
+    </div>      
+   );
+};
+*/
+
 class Option extends React.Component{
  render(){
    return (
@@ -110,6 +145,20 @@ class Option extends React.Component{
    );
  }
 }
+
+/*
+const Option = (props) => {
+  return (
+   <div>
+    <p>{this.props.optionText}</p>
+ {/*<ol>
+     <li>Option1</li>
+     <li>Option2</li>
+ </ol>*/}/*
+   </div>
+   );
+};
+*/
 
 class AddOptions extends React.Component{
 constructor(props) {
