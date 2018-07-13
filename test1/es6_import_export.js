@@ -9,8 +9,8 @@ export default (num1, num2) => num1 - num2;
 
 src\app.js
 //named exports
-import subtract, { square, add } from '.\util.js';
-import isSenior, { isAdult, canDrink } from ''.\person.js';
+import subtract, { square, add } from './util.js';
+import isSenior, { isAdult, canDrink } from './person.js';
 console.log('app.js is running');
 console.log(square(5));
 console.log(add(4, 10));
